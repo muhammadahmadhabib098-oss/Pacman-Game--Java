@@ -128,20 +128,20 @@ public class Pacman_Game_Project {
             System.out.println("Move (W/A/S/D): ");
             char move = sc.next().toUpperCase().charAt(0);
 
-            // Move PacMan
+            
             pacman.move(move, board);
 
-            // Ghost moves automatically
+
             ghost.move(board);
 
-            // Check if PacMan eats food
+
             if (pacman.getX() == food.getX() && pacman.getY() == food.getY()) {
                 System.out.println("PacMan ate the food! 🎉");
                 pacman.increaseScore();
                 food.respawn(board);
             }
 
-            // Check collision with ghost
+
             if (pacman.getX() == ghost.getX() && pacman.getY() == ghost.getY()) {
                 System.out.println("Caught by Ghost! Game Over 💀");
                 gameRunning = false;
